@@ -53,3 +53,33 @@ function mediaEstudante(estudante: Estudante) : number {
 }
 
 
+type Estudante = {
+  nome: string;
+  notas: number[];
+};
+
+
+const estiloAprendizado = function(estudante: Estudante): string {
+  
+  const media: number = estudante.notas.reduce((soma, nota) => soma + nota, 0) / estudante.notas.length;
+
+
+  if (media >= 7) {
+    return "Exploradora confiante.";
+  } else if (media >= 5) {
+    return "Brilha como aprendiz.";
+  } else {
+    return "Desbravando a programação.";
+  }
+};
+
+
+const estudante7: Estudante = { nome: "Isis", notas: [8, 7, 9] };
+const estudante4: Estudante = { nome: "Ana", notas: [6, 5, 6] };
+const estudante5: Estudante = { nome: "João", notas: [4, 3, 5] };
+
+console.log(estiloAprendizado(estudante7)); 
+console.log(estiloAprendizado(estudante4)); 
+console.log(estiloAprendizado(estudante5));
+
+
